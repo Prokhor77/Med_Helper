@@ -76,6 +76,11 @@ public class SpravkaFragmentDoctor extends Fragment {
         EditText editTextQuestion = getActivity().findViewById(R.id.editTextQuestion);
         String question = editTextQuestion.getText().toString();
 
+        if (question.isEmpty()) {
+            Toast.makeText(getActivity(), "Сообщение не должно быть пустым", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         SharedPreferences preferences = getActivity().getSharedPreferences("data", Context.MODE_PRIVATE);
         int patientId = Integer.parseInt(preferences.getString("id", "-1"));
 
