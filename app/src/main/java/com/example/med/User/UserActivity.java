@@ -1,4 +1,4 @@
-package com.example.med;
+package com.example.med.User;
 
 import android.os.Bundle;
 
@@ -7,6 +7,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.med.R;
+import com.example.med.User.CallsFragmentUser;
+import com.example.med.User.ProfileFragmentUser;
+import com.example.med.User.SearchFragmentUser;
+import com.example.med.User.SpravkaFragmentUser;
 import com.example.med.databinding.ActivityUserBinding;
 
 public class UserActivity extends AppCompatActivity {

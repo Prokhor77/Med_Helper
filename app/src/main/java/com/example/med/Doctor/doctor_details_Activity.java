@@ -1,4 +1,4 @@
-package com.example.med;
+package com.example.med.Doctor;
 
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
@@ -12,6 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.med.DBHelper;
+import com.example.med.R;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Completable;

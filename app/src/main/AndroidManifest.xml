@@ -15,16 +15,16 @@
         android:theme="@style/Theme.Med"
         tools:targetApi="31">
         <activity
-            android:name=".doctor_details_Activity"
+            android:name=".Doctor.doctor_details_Activity"
             android:exported="false" />
         <activity
-            android:name=".SpravkaActivity"
+            android:name=".Spravka.SpravkaActivity"
             android:exported="false" />
         <activity
-            android:name=".UserActivity"
+            android:name=".User.UserActivity"
             android:exported="false" />
         <activity
-            android:name=".DoctorActivity"
+            android:name=".Doctor.DoctorActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

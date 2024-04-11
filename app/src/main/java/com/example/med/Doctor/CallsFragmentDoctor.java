@@ -1,4 +1,4 @@
-package com.example.med;
+package com.example.med.Doctor;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -10,10 +10,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.med.Adapters.CallsAdapter;
+import com.example.med.DBHelper;
+import com.example.med.R;
 
 
 public class CallsFragmentDoctor extends Fragment {

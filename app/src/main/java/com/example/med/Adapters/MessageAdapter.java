@@ -1,4 +1,4 @@
-package com.example.med;
+package com.example.med.Adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
+import com.example.med.R;
 
 import java.util.List;
 

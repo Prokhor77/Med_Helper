@@ -1,4 +1,4 @@
-package com.example.med;
+package com.example.med.Doctor;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.med.DBHelper;
+import com.example.med.MainActivity;
+import com.example.med.R;
 
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package com.example.med;
+package com.example.med.Doctor;
 
 import android.os.Bundle;
 
@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.med.R;
 import com.example.med.databinding.ActivityDoctorBinding;
 
 public class DoctorActivity extends AppCompatActivity {
