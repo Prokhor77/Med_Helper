@@ -7,12 +7,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.text.TextUtils;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class DBHelper extends SQLiteOpenHelper {
+public class   DBHelper extends SQLiteOpenHelper {
 
     private Context context;
 
@@ -48,10 +49,10 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COLUMN_UNIX_CREATE_MESSAGE = "unix_create_message";
 
 
-
     public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
+
     }
 
     @Override
@@ -207,7 +208,6 @@ public class DBHelper extends SQLiteOpenHelper {
                 ")";
         db.execSQL(CREATE_MESSAGES_TABLE);
 
-
     }
 
     public Cursor getUserByFullName(String fullName) {
@@ -286,14 +286,12 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_CALLS);
         onCreate(db);
     }
-
 
     public void insertChat(int chatId, int patientId) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -305,8 +303,6 @@ public class DBHelper extends SQLiteOpenHelper {
         db.insert("chats", null, values);
         db.close();
     }
-
-
 
     public void insertMessage(int chatId, String message, int patientId) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -350,21 +346,33 @@ public class DBHelper extends SQLiteOpenHelper {
     public List<String> getMessages(int patientId) {
         List<String> messages = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query("messages",
-                new String[]{"message"},
+
+        Cursor chatCursor = db.query("messages",
+                new String[]{"chat_id"},
                 "patient_id = ?",
                 new String[]{String.valueOf(patientId)},
-                null, null,
-                "unix_create_message DESC");
+                null, null, null);
 
-        while (cursor.moveToNext()) {
-            String message = cursor.getString(cursor.getColumnIndexOrThrow("message"));
-            messages.add(message);
+        if (chatCursor.moveToFirst()) {
+            int chatId = chatCursor.getInt(chatCursor.getColumnIndexOrThrow("chat_id"));
+
+            Cursor messageCursor = db.query("messages",
+                    new String[]{"message"},
+                    "chat_id = ?",
+                    new String[]{String.valueOf(chatId)},
+                    null, null,
+                    "unix_create_message DESC");
+
+            while (messageCursor.moveToNext()) {
+                String message = messageCursor.getString(messageCursor.getColumnIndexOrThrow("message"));
+                messages.add(message);
+            }
+
+            messageCursor.close();
+            chatCursor.close();
         }
 
-        cursor.close();
         return messages;
     }
-
 
 }
