@@ -1,4 +1,3 @@
-// CallsFragmentUser.java
 package com.example.med.User;
 
 import android.database.Cursor;
@@ -39,10 +38,8 @@ public class CallsFragmentUser extends Fragment {
         buttonCallDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Скрыть кнопку перед переходом к RequestDoctorFragment
                 buttonCallDoctor.setVisibility(View.GONE);
 
-                // Переход к RequestDoctorFragment
                 getParentFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, new RequestDoctorFragment())
                         .addToBackStack(null)
@@ -57,7 +54,6 @@ public class CallsFragmentUser extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        // Показывать кнопку, если это CallsFragmentUser
         buttonCallDoctor.setVisibility(View.VISIBLE);
     }
 
@@ -66,5 +62,6 @@ public class CallsFragmentUser extends Fragment {
         adapter = new CallsUsAdapter(getContext(), cursor);
         recyclerView.setAdapter(adapter);
     }
+
 
 }

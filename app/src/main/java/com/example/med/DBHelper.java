@@ -390,5 +390,20 @@ public class   DBHelper extends SQLiteOpenHelper {
         );
     }
 
+    public boolean insertCall(long unixEpochCreate, int id, String phoneNumber, String symptoms, String area, int actual, int idCall) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("unix_epoch_create", unixEpochCreate);
+        contentValues.put("id", id);
+        contentValues.put("phone_number", phoneNumber);
+        contentValues.put("symtomps", symptoms);
+        contentValues.put("area", area);
+        contentValues.put("actual", actual);
+        contentValues.put("id_call", idCall);
+        long result = db.insert("calls", null, contentValues);
+        return result != -1; // Return true if insertion was successful, false otherwise
+    }
+
+
 
 }
