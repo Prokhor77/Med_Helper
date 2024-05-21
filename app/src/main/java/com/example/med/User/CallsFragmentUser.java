@@ -14,17 +14,20 @@ import com.example.med.R;
 
 public class CallsFragmentUser extends Fragment {
 
-    // Параметры и методы
+    private Button buttonCallDoctor;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_calls_user, container, false);
 
-        Button buttonCallDoctor = view.findViewById(R.id.button_call_doctor);
+        buttonCallDoctor = view.findViewById(R.id.button_call_doctor);
         buttonCallDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Скрыть кнопку перед переходом к RequestDoctorFragment
+                buttonCallDoctor.setVisibility(View.GONE);
+
                 // Переход к RequestDoctorFragment
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, new RequestDoctorFragment());
@@ -34,5 +37,12 @@ public class CallsFragmentUser extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Показывать кнопку, если это CallsFragmentUser
+        buttonCallDoctor.setVisibility(View.VISIBLE);
     }
 }
