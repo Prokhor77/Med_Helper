@@ -5,10 +5,27 @@
     android:layout_height="match_parent"
     tools:context=".Doctor.SearchFragmentDoctor">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ПОИСК ДОКТОР" />
+        android:hint="Введите ФИО"
+        android:id="@+id/search_text_doc"/>
+
+    <Button
+        android:id="@+id/search_button_doc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginTop="50dp"
+        android:text="Поиск" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewResults"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        />
+
 
 </FrameLayout>

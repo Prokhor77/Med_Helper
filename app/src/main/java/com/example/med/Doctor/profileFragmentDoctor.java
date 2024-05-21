@@ -20,6 +20,14 @@ import com.example.med.DBHelper;
 import com.example.med.MainActivity;
 import com.example.med.R;
 
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
+
+import java.util.ArrayList;
 import java.util.Map;
 
 public class profileFragmentDoctor extends Fragment {
@@ -52,6 +60,28 @@ public class profileFragmentDoctor extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        LineChart lineChart = view.findViewById(R.id.lineChart);
+
+        ArrayList<Entry> entries = new ArrayList<>();
+        entries.add(new Entry(0, 4));
+        entries.add(new Entry(1, 8));
+        entries.add(new Entry(2, 6));
+        entries.add(new Entry(3, 2));
+        entries.add(new Entry(4, 7));
+
+        LineDataSet dataSet = new LineDataSet(entries, "Label");
+        dataSet.setColor(ColorTemplate.rgb("#FF5722"));
+        dataSet.setValueTextColor(ColorTemplate.rgb("#3F51B5"));
+
+        LineData lineData = new LineData(dataSet);
+        lineChart.setData(lineData);
+
+        Description description = new Description();
+        description.setText("График");
+        lineChart.setDescription(description);
+
+        lineChart.invalidate();
 
         long epochTimeSeconds = System.currentTimeMillis() / 1000;
         Log.d("MainActivity", "Текущее время в формате epoch time: " + epochTimeSeconds);
