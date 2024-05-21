@@ -2,22 +2,13 @@ package com.example.med.Spravka;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.med.R;
-import com.example.med.SearchFragmentSpravka;
-import com.example.med.User.CallsFragmentUser;
-import com.example.med.User.ProfileFragmentUser;
-import com.example.med.User.SpravkaFragmentUser;
 import com.example.med.databinding.ActivitySpravkaBinding;
-import com.example.med.databinding.ActivityUserBinding;
 
 public class SpravkaActivity extends AppCompatActivity {
 

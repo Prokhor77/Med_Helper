@@ -207,7 +207,6 @@ public class   DBHelper extends SQLiteOpenHelper {
                 COLUMN_MESSAGE + " TEXT" +
                 ")";
         db.execSQL(CREATE_MESSAGES_TABLE);
-
     }
 
     public Cursor getUserByFullName(String fullName) {
@@ -373,6 +372,21 @@ public class   DBHelper extends SQLiteOpenHelper {
         }
 
         return messages;
+    }
+
+    public Cursor getCallsUser() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        SharedPreferences sharedPreferences = context.getSharedPreferences("data", Context.MODE_PRIVATE);
+
+        return db.query(
+                "calls",
+                new String[]{"unix_epoch_create", "id", "phone_number", "symtomps", "diagnosis", "treatment", "appointment_time", "unix_epoch_end", "area", "actual", "id_call"},
+                null,
+                null,
+                null,
+                null,
+                null
+        );
     }
 
 }
