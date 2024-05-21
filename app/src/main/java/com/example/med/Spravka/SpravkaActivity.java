@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.med.R;
+import com.example.med.SearchFragmentSpravka;
 import com.example.med.User.CallsFragmentUser;
 import com.example.med.User.ProfileFragmentUser;
 import com.example.med.User.SpravkaFragmentUser;
@@ -34,7 +35,7 @@ public class SpravkaActivity extends AppCompatActivity {
                 replaceFragment(new ProfileFragmentSpravka());
 
             } else if (item.getItemId() == R.id.search_spravka) {
-                replaceFragment(new CallsFragmentSpravka());
+                replaceFragment(new SearchFragmentSpravka());
 
             } else if (item.getItemId() == R.id.spravka_spravka) {
                 replaceFragment(new SpravkaFragmentSpravka());
