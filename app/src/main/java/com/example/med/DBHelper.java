@@ -404,6 +404,8 @@ public class   DBHelper extends SQLiteOpenHelper {
         return result != -1; // Return true if insertion was successful, false otherwise
     }
 
-
-
+    public Cursor searchDoctor(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.rawQuery("SELECT * FROM calls WHERE id = ?", new String[]{String.valueOf(id)});
+    }
 }
