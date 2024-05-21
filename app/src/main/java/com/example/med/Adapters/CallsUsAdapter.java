@@ -12,6 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.med.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class CallsUsAdapter extends RecyclerView.Adapter<CallsUsAdapter.ViewHolder> {
 
     private Context context;
@@ -38,24 +42,23 @@ public class CallsUsAdapter extends RecyclerView.Adapter<CallsUsAdapter.ViewHold
             String symptoms = cursor.getString(cursor.getColumnIndexOrThrow("symtomps"));
             String diagnosis = cursor.getString(cursor.getColumnIndexOrThrow("diagnosis"));
             String treatment = cursor.getString(cursor.getColumnIndexOrThrow("treatment"));
-            String appointmentTime = cursor.getString(cursor.getColumnIndexOrThrow("appointment_time"));
-            String unixEpochEnd = cursor.getString(cursor.getColumnIndexOrThrow("unix_epoch_end"));
-            String area = cursor.getString(cursor.getColumnIndexOrThrow("area"));
             String actual = cursor.getString(cursor.getColumnIndexOrThrow("actual"));
             String idCall = cursor.getString(cursor.getColumnIndexOrThrow("id_call"));
 
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
+            String formattedDate = dateFormat.format(new Date(Long.parseLong(unixEpochCreate) * 1000));
+
+            String actualText = actual.equals("1") ? "Актуален" : "Неактуален";
+
             holder.textView.setText(
-                    unixEpochCreate + "\n" +
-                            id + "\n" +
-                            phoneNumber + "\n" +
-                            symptoms + "\n" +
-                            diagnosis + "\n" +
-                            treatment + "\n" +
-                            appointmentTime + "\n" +
-                            unixEpochEnd + "\n" +
-                            area + "\n" +
-                            actual + "\n" +
-                            idCall
+                    "Дата вызова: " + formattedDate + "\n" +
+                            "ID Аккаунта: " + id + "\n" +
+                            "Номер телефона: " + phoneNumber + "\n" +
+                            "Симптомы: " + symptoms + "\n" +
+                            "Диагноз: " + diagnosis + "\n" +
+                            "Лечение: " + treatment + "\n" +
+                            "Актуален вызов: " + actualText + "\n" +
+                            "ID вызова: " + idCall + "\n"
             );
         }
     }

@@ -377,16 +377,18 @@ public class   DBHelper extends SQLiteOpenHelper {
     public Cursor getCallsUser() {
         SQLiteDatabase db = this.getReadableDatabase();
         SharedPreferences sharedPreferences = context.getSharedPreferences("data", Context.MODE_PRIVATE);
+        String userId = sharedPreferences.getString("id", "");
 
         return db.query(
                 "calls",
-                new String[]{"unix_epoch_create", "id", "phone_number", "symtomps", "diagnosis", "treatment", "appointment_time", "unix_epoch_end", "area", "actual", "id_call"},
-                null,
-                null,
+                new String[]{"unix_epoch_create", "id", "phone_number", "symtomps", "diagnosis", "treatment", "actual", "id_call"},
+                "id = ?",
+                new String[]{userId},
                 null,
                 null,
                 null
         );
     }
+
 
 }
