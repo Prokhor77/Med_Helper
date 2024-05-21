@@ -9,10 +9,6 @@
         android:id="@+id/calls_user"
         android:icon="@drawable/baseline_call_24"/>
 
-    <item android:title="Поиск"
-        android:id="@+id/search_user"
-        android:icon="@drawable/baseline_search_24"/>
-
     <item android:title="Справка"
         android:id="@+id/spravka_user"
         android:icon="@drawable/baseline_message_24"/>

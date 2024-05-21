@@ -32,9 +32,6 @@ public class UserActivity extends AppCompatActivity {
             } else if (item.getItemId() == R.id.calls_user) {
                 replaceFragment(new CallsFragmentUser());
 
-            } else if (item.getItemId() == R.id.search_user) {
-                replaceFragment(new SearchFragmentUser());
-
             } else if (item.getItemId() == R.id.spravka_user) {
                 replaceFragment(new SpravkaFragmentUser());
 
