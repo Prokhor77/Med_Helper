@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Профиль"
-        android:id="@+id/profile_user"
+        android:id="@+id/profile_spravka"
         android:icon="@drawable/baseline_person_24"/>
 
-    <item android:title="Вызовы"
-        android:id="@+id/calls_user"
-        android:icon="@drawable/baseline_call_24"/>
+    <item android:title="Поиск"
+        android:id="@+id/search_spravka"
+        android:icon="@drawable/baseline_search_24"/>
 
     <item android:title="Чат"
-        android:id="@+id/spravka_user"
+        android:id="@+id/spravka_spravka"
         android:icon="@drawable/baseline_message_24"/>
 
 </menu>

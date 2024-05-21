@@ -13,7 +13,7 @@
         android:id="@+id/search_doctor"
         android:icon="@drawable/baseline_search_24"/>
 
-    <item android:title="Справка"
+    <item android:title="Чат"
         android:id="@+id/spravka_doctor"
         android:icon="@drawable/baseline_message_24"/>
 
