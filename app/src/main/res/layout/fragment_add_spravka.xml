@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Spravka.AddFragmentSpravka">
+
+    <EditText
+        android:id="@+id/editTextPassport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите паспорт"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите адрес"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextFullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите ФИО"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextRegion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите участок"
+        android:inputType="text" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioButtonUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Создать юзера" />
+
+        <RadioButton
+            android:id="@+id/radioButtonDoctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Создать врача" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonCreate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Создать" />
+
+</LinearLayout>

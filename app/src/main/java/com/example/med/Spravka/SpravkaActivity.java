@@ -28,6 +28,9 @@ public class SpravkaActivity extends AppCompatActivity {
             } else if (item.getItemId() == R.id.search_spravka) {
                 replaceFragment(new SearchFragmentSpravka());
 
+            } else if (item.getItemId() == R.id.add_spravka) {
+                replaceFragment(new AddFragmentSpravka());
+
             } else if (item.getItemId() == R.id.spravka_spravka) {
                 replaceFragment(new SpravkaFragmentSpravka());
 

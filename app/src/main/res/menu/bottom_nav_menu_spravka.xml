@@ -9,6 +9,10 @@
         android:id="@+id/search_spravka"
         android:icon="@drawable/baseline_search_24"/>
 
+    <item android:title="Поиск"
+        android:id="@+id/add_spravka"
+        android:icon="@drawable/baseline_add_24"/>
+
     <item android:title="Чат"
         android:id="@+id/spravka_spravka"
         android:icon="@drawable/baseline_message_24"/>
