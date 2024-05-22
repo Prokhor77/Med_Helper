@@ -9,23 +9,36 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Введите ФИО"
+        android:hint="Введите ID аккаунта"
         android:id="@+id/search_text_doc"/>
 
-    <Button
-        android:id="@+id/search_button_doc"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top"
         android:layout_marginTop="50dp"
-        android:text="Поиск" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/search_button_doc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Поиск" />
+
+        <Button
+            android:id="@+id/clear_button_doc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Очистить поле"
+            android:onClick="clearSearchText" />
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewResults"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
-        />
-
+        android:layout_marginTop="100dp" />
 
 </FrameLayout>

@@ -10,11 +10,21 @@ import android.view.ViewGroup;
 
 import com.example.med.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SearchFragmentSpravka#newInstance} factory method to
- * create an instance of this fragment.
- */
+import android.database.Cursor;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.med.R;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class SearchFragmentSpravka extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
