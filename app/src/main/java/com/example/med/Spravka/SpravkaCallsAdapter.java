@@ -1,4 +1,5 @@
-package com.example.med.Doctor;
+package com.example.med.Spravka;
+
 
 import android.database.Cursor;
 import android.view.LayoutInflater;
@@ -9,29 +10,31 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.med.Adapters.DoctorCallsAdapter;
 import com.example.med.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class DoctorCallsAdapter extends RecyclerView.Adapter<DoctorCallsAdapter.ViewHolder> {
+
+public class SpravkaCallsAdapter extends RecyclerView.Adapter<DoctorCallsAdapter.ViewHolder> {
 
     private Cursor cursor;
 
-    public DoctorCallsAdapter(Cursor cursor) {
+    public SpravkaCallsAdapter(Cursor cursor) {
         this.cursor = cursor;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public DoctorCallsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_doccall, parent, false);
-        return new ViewHolder(view);
+        return new DoctorCallsAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull DoctorCallsAdapter.ViewHolder holder, int position) {
         if (!cursor.moveToPosition(position)) {
             return;
         }

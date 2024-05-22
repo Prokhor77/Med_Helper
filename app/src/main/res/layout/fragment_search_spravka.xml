@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Doctor.SearchFragmentDoctor">
+    tools:context=".Spravka.SearchFragmentSpravka">
 
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Введите ID аккаунта"
-        android:id="@+id/search_text_doc"/>
+        android:id="@+id/search_text_sprav"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,14 +19,14 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/search_button_doc"
+            android:id="@+id/search_button_sprav"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Поиск" />
 
         <Button
-            android:id="@+id/clear_button_doc"
+            android:id="@+id/clear_button_sprav"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -36,7 +36,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewResults"
+        android:id="@+id/recyclerViewResults_sprav"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="100dp" />
